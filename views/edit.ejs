@@ -2,20 +2,80 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit username</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit Username</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9fafc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-container {
+      background-color: white;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: 22px;
+      color: #333;
+    }
+
+    textarea,
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      resize: vertical;
+    }
+
+    input[type="password"] {
+      font-family: inherit;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 
 <body>
-    <h2>You are about to edit this user : <%= user.email %></h2>
-    <form method="post" action="/user/<%= user.id%>?_method=PATCH">
-        <textarea name="username">
-            <%= user.username %>
-        </textarea>
-        <input type="password" name="password" placeholder="Enter password">
-        <button>Edit</button>
+  <div class="form-container">
+    <h2>Editing user: <%= user.email %></h2>
+    <form method="post" action="/user/<%= user.id %>?_method=PATCH">
+      <label for="username">Username:</label>
+      <textarea name="username" rows="2"><%= user.username %></textarea>
+
+      <label for="password">Password:</label>
+      <input type="password" name="password" placeholder="Enter password" required />
+
+      <button type="submit">Save Changes</button>
     </form>
+  </div>
 </body>
 
 </html>
