@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .nav {
+            margin: 20px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: white;
+            background-color: #4CAF50;
+            padding: 10px 18px;
+            border-radius: 5px;
+            margin: 0 10px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav a:hover {
+            background-color: #45a049;
+        }
+
+        h2 {
+            margin-top: 30px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .actions {
+            margin-top: 30px;
+        }
+
+        .actions button,
+        .actions a {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            margin: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .actions button:hover,
+        .actions a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>The total number of users are : <%= count %></h2>
+
+    <div class="actions">
+        <button onclick="location.href='/user/new'">Join Us Today!</button>
+        <a href="/user/new">Create New User</a>
+        <a href="/user/delete" style="background-color: #dc3545;">Delete Your Account</a>
+    </div>
+</body>
+
+</html>
